@@ -1,0 +1,4 @@
+RUN IN RandomQuestionInterview\RandomQuestionInterview
+
+dotnet ef migrations add Initial --context InterrogationContext --project ..\QuestionDAL
+dotnet ef database update --context InterrogationContext --project ..\QuestionDAL

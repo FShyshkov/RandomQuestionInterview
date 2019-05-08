@@ -9,7 +9,7 @@ using RandomQuestionInterview.QuestionDAL.Context;
 namespace RandomQuestionInterview.QuestionDAL.Migrations
 {
     [DbContext(typeof(InterrogationContext))]
-    [Migration("20190507190546_Initial")]
+    [Migration("20190508084956_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,7 +28,7 @@ namespace RandomQuestionInterview.QuestionDAL.Migrations
 
                     b.Property<string>("QuestionText")
                         .IsRequired()
-                        .HasColumnType("varchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("QuestionId");
 

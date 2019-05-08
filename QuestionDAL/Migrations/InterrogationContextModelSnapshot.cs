@@ -26,7 +26,7 @@ namespace RandomQuestionInterview.QuestionDAL.Migrations
 
                     b.Property<string>("QuestionText")
                         .IsRequired()
-                        .HasColumnType("varchar(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("QuestionId");
 

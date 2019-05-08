@@ -16,7 +16,7 @@ namespace RandomQuestionInterview.QuestionDAL.Context.Configurations
             // Generate property on Add
             builder.Property(p => p.QuestionId).ValueGeneratedOnAdd();
             // Set mapping for columns
-            builder.Property(p => p.QuestionText).HasColumnType("varchar(max)").IsRequired();
+            builder.Property(p => p.QuestionText).HasColumnType("nvarchar(max)").IsRequired();
         }
     }
 }

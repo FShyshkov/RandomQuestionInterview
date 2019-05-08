@@ -1,0 +1,32 @@
+<div>
+  <h2></h2>
+  <form>
+    <div class="form-group">
+      <label for="id-input">QuestionID</label>
+      <input
+        type="number"
+        id="id-input"
+        [(ngModel)]="questionInfo.QuestionId"
+        class="form-control"
+        name="id-input-name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="questionText-input">QuestionText</label>
+      <input
+        type="text"
+        id="questionText-input"
+        [(ngModel)]="questionInfo.QuestionText"
+        class="form-control"
+        name="questionText-input-name"
+      />
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="addOrUpdateQuestion($event)"
+    >
+      Save
+    </button>
+  </form>
+</div>

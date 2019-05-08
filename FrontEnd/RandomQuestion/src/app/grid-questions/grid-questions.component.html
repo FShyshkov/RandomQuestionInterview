@@ -1,0 +1,19 @@
+<a href="#" id="new-button">New</a>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>QuestionText</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let questionInfo of questionData">
+      <td>{{ questionInfo.QuestionId }}</td>
+      <td>{{ questionInfo.QuestionText }}</td>
+      <td>
+        <a href="#" (click)="editRecord(this.questionInfo)">Edit</a>
+        <a href="#" (click)="deleteRecord(this.questionInfo)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -27,6 +27,14 @@ namespace RandomQuestionInterview
         {
             services.AddDALServices(Configuration.GetConnectionString("DataDatabase"));
             services.AddQuestionServices();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(c =>
             {
@@ -39,9 +47,11 @@ namespace RandomQuestionInterview
         {
             if (env.IsDevelopment())
             {
+                app.UseCors("CorsPolicy");
                 app.UseDeveloperExceptionPage();
             }
-
+           
+            
             app.UseExceptionHandler(
                 builder =>
                 {
